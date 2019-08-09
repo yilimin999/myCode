@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/font/iconfont.css">
+    <script src="./css/font/iconfont.js"></script>
+    <!-- <script src="./js/libs/require.js"></script> -->
+    <script src="./js/libs/flexible.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <span class="iconfont icon-gengduo1 btnall"></span>
+            <div class="ss">关闭</div>
+        </div>
+        <div class="main">
+
+            <div class="main-left on main_left">
+                <div class="main-left-item main_left_item">
+                    <ul>
+                        <li>
+                            <span class="spanbtn">+</span>
+                        </li>
+                        <div class="li-item">
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                        </div>
+                    </ul>
+                    <ul>
+                        <li>
+                            <span class="spanbtn">+</span>
+                        </li>
+                        <div class="li-item">
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                        </div>
+                    </ul>
+                    <ul>
+                        <li>
+                            <span class="spanbtn">+</span>
+                        </li>
+                        <div class="li-item">
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                            <li>明月装饰了我的窗</li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script src="./js/libs/require.js" data-main="./js/main" async defer='true'></script>
+    <script>
+        var btn = document.querySelector('.btnall');
+        var on = document.querySelector('.on');
+        var wrapper = document.querySelector('.wrapper');
+        var liItem = document.querySelector('.liItem');
+        var main_left = document.querySelector('.main_left');
+        var main = document.querySelector('.main');
+        var ss = document.querySelector('.ss');
+        var main_left_item = document.querySelector('.main_left_item')
+        main_left_item.addEventListener('click', function(e) {
+
+        })
+        main.addEventListener('click', function(e) {
+
+            // on.classList.add('main-left');
+            on.style.display = 'none'
+        });
+        btn.addEventListener('click', function(e) {
+            // on.classList.add('main-left');
+            on.style.display = 'block'
+        });
+
+        wrapper.addEventListener('click', function(e) {
+
+            var e = e || window.event,
+                tar = e.target || e.srcElement;
+            if (tar.className === 'spanbtn') {
+                e.stopPropagation();
+                console.log(tar.parentNode.nextElementSibling)
+                tar.isCheck = false;
+                if (tar.innerHTML === '-') {
+                    tar.innerHTML = '+'
+                    tar.parentNode.nextElementSibling.style.display = 'none';
+                    // tar.innerHTML === '+'
+
+                } else {
+                    e.stopPropagation();
+                    tar.innerHTML = '-'
+                    tar.parentNode.nextElementSibling.style.display = 'block';
+
+                }
+                // tar.isCheck[tar.isCheck?'add':'remove']
+
+
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>
